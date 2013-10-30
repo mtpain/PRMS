@@ -6,8 +6,8 @@
 # $Id: Makefile 5145 2012-12-19 17:39:07Z rsregan $
 #
 
-MOWSDIR  = /raid2/jhamman/projects/BPA/src/prms3.0.5_src/
-MLIBDIR  = $(MOWSDIR)lib
+MOWSDIR  = /raid2/jhamman/projects/BPA/src/prms
+MLIBDIR  = $(MOWSDIR)/lib
 CC       = gcc
 RM       = rm -f
 AR       = ar ruv

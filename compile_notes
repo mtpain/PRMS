@@ -1,0 +1,23 @@
+Compiling PRMS 3.0.5
+Wed May  1 16:25:22 MDT 2013
+wwwbrr.cr.usgs.gov
+
+Copied from:ftp://brrftp.cr.usgs.gov/pub/mows/software/prms/prmsCompilation.txt
+
+Source code available from the PRMS web page (http://wwwbrr.cr.usgs.gov/prms).
+The Windows and Linux executables are built from exactly the same source code.
+
+Windows
+
+The Windows distribution executable was built using Windows Visual Studio 2010
+and Intel Parallel Studio XE 2011. The fortran and C source files are each
+set up as their own projects. The fortran project is created as an "app." and
+the C project is a static library. The fortran project depends on the C
+project.
+
+Linux
+
+The Linux distribution executable was built on 64-bit Linux
+using GNU gcc and gfortran. The makefiles are included with the source
+code. Edit the "MOWSDIR" variable in the "makelist" file to point to the
+location of the source code top level directory. Run make here.
