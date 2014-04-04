@@ -21,3 +21,7 @@ The Linux distribution executable was built on 64-bit Linux
 using GNU gcc and gfortran. The makefiles are included with the source
 code. Edit the "MOWSDIR" variable in the "makelist" file to point to the
 location of the source code top level directory. Run make here.
+
+**After being unable to compile when changing the MOWSDIR variable in the
+makelist and makefile, decided to delete the MOWSDIR=<path> from ./prmsIV/makelist
+and ./mmf/trunk/Makefile. Then export MOWSDIR=<path of compile_notes file>**

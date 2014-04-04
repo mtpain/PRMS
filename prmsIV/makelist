@@ -3,7 +3,6 @@
 # $Id: makelist 5150 2012-12-19 21:33:33Z rsregan $
 #-------------------------------------------------------------------
 
-MOWSDIR     = /raid2/jhamman/projects/BPA/src/prms
 MMFDIR      = $(MOWSDIR)/mmf/trunk
 PRMSDIR     = $(MOWSDIR)/prmsIV
 LIBDIR      = $(MOWSDIR)/lib
