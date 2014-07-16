@@ -1,3 +1,4 @@
+!testedit
 !***********************************************************************
 ! Initiates development of a snowpack and simulates snow accumulation
 ! and depletion processes using an energy-budget approach
