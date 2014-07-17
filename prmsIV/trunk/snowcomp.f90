@@ -544,6 +544,47 @@
           Iso(i) = 1 ! [flag]
           Mso(i) = 1 ! [flag]
           Lso(i) = 0 ! [counter]
+          ! Snow scraping occurs below by initializing all variables to
+          ! the starting values they were assigned at the beginning of the model run
+          Pkwater_ante(i) = 0.0D0
+          Snowmelt(i) = 0.0
+          Snow_evap(i) = 0.0
+          Snowcov_area(i) = 0.0
+          Pptmix_nopack(i) = 0
+          Tcal(i) = 0.0
+          Iasw(i) = 0
+          Pk_def(i) = 0.0
+          Pk_temp(i) = 0.0
+          Pk_ice(i) = 0.0
+          Freeh2o(i) = 0.0
+          Pk_depth(i) = 0.0D0
+          Pss(i) = 0.0
+          Pst(i) = 0.0
+          Pk_den(i) = 0.0
+          Albedo(i) = 0.0
+          Snsv(i) = 0.0
+          Lst(i) = 0
+          Int_alb(i) = 1
+          Salb(i) = 0.0
+          Slst(i) = 0.0
+          Snowcov_areasv(i) = 0.0
+          Scrv(i) = 0.0
+          Pksv(i) = 0.0
+          Pk_precip(i) = 0.0
+          Basin_snowmelt(i) = 0.0D0
+          Basin_pweqv(i) = 0.0D0
+          Basin_snowevap(i) = 0.0D0
+          Basin_snowcov(i) = 0.0D0
+          Basin_pk_precip(i) = 0.0D0
+          Basin_snowdepth(i) = 0.0D0
+
+          Acum(i) = acum_init(i)
+          Amlt(i) = amlt_init(i)
+
+          Deninv = 1.0D0/Den_init
+!      Setden = Settle_const/Den_max
+          Denmaxinv = 1.0D0/Den_max
+
         ENDDO
       ENDIF
 
