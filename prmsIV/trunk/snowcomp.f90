@@ -571,13 +571,12 @@
           Scrv(i) = 0.0
           Pksv(i) = 0.0
           Pk_precip(i) = 0.0
-          Basin_snowmelt(i) = 0.0D0
-          Basin_pweqv(i) = 0.0D0
-          Basin_snowevap(i) = 0.0D0
-          Basin_snowcov(i) = 0.0D0
-          Basin_pk_precip(i) = 0.0D0
-          Basin_snowdepth(i) = 0.0D0
-
+          Basin_snowmelt = 0.0D0
+          Basin_pweqv = 0.0D0
+          Basin_snowevap = 0.0D0
+          Basin_snowcov = 0.0D0
+          Basin_pk_precip = 0.0D0
+          Basin_snowdepth = 0.0D0
           Acum(i) = acum_init(i)
           Amlt(i) = amlt_init(i)
 
