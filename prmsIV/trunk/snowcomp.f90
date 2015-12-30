@@ -544,46 +544,29 @@
           Iso(i) = 1 ! [flag]
           Mso(i) = 1 ! [flag]
           Lso(i) = 0 ! [counter]
-          ! Snow scraping occurs below by initializing all variables to
-          ! the starting values they were assigned at the beginning of the model run
-          Pkwater_ante(i) = 0.0D0
-          Snowmelt(i) = 0.0
-          Snow_evap(i) = 0.0
-          Snowcov_area(i) = 0.0
-          Pptmix_nopack(i) = 0
-          Tcal(i) = 0.0
+      ! Snowscraping starts here by forcing every hru to have
+      ! no-snowpack conditions on the first day of the wateryear
+          Pk_depth(i) = 0.0D0
+          Pss(i) = 0.0
+          Snsv(i) = 0.0
+          Lst(i) = 0
+          Pst(i) = 0.0
           Iasw(i) = 0
+          Albedo(i) = 0.0
+          Pk_den(i) = 0.0
+          Snowcov_area(i) = 0.0
           Pk_def(i) = 0.0
           Pk_temp(i) = 0.0
           Pk_ice(i) = 0.0
           Freeh2o(i) = 0.0
-          Pk_depth(i) = 0.0D0
-          Pss(i) = 0.0
-          Pst(i) = 0.0
-          Pk_den(i) = 0.0
-          Albedo(i) = 0.0
-          Snsv(i) = 0.0
-          Lst(i) = 0
-          Int_alb(i) = 1
-          Salb(i) = 0.0
-          Slst(i) = 0.0
           Snowcov_areasv(i) = 0.0
-          Scrv(i) = 0.0
-          Pksv(i) = 0.0
-          Pk_precip(i) = 0.0
-          Basin_snowmelt = 0.0D0
-          Basin_pweqv = 0.0D0
-          Basin_snowevap = 0.0D0
-          Basin_snowcov = 0.0D0
-          Basin_pk_precip = 0.0D0
-          Basin_snowdepth = 0.0D0
-          Acum(i) = acum_init(i)
-          Amlt(i) = amlt_init(i)
-
-          Deninv = 1.0D0/Den_init
-!      Setden = Settle_const/Den_max
-          Denmaxinv = 1.0D0/Den_max
-
+      ! Include Pkwater_equiv as one of re-initialized variables as well
+      ! to account for the case at line 632 in which if there is a
+      ! pre-existing snowpack (Pkwater_ante>0) and a precipitation event
+      ! occurs, the precipitation is added to the pre-existing snowpack.
+      ! We initialize Pkwater_equiv because Pkwater_ante is reset to that
+      ! at line 587.
+          Pkwater_equiv(i) = 0.0
         ENDDO
       ENDIF
 
