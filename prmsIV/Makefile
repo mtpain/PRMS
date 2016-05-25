@@ -14,6 +14,7 @@ include ./makelist
 #
 
 all: standard
+	@printf "\nBuild Finished for Architecture $(ARC)\n"
 
 prms_ws: prmswatersmart
 

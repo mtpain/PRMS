@@ -3,7 +3,7 @@
 # $Id: makelist 5150 2012-12-19 21:33:33Z rsregan $
 #-------------------------------------------------------------------
 
-MOWSDIR     = /raid2/jhamman/projects/BPA/src/prms
+MOWSDIR     = ..
 MMFDIR      = $(MOWSDIR)/mmf/trunk
 PRMSDIR     = $(MOWSDIR)/prmsIV
 LIBDIR      = $(MOWSDIR)/lib
@@ -11,12 +11,14 @@ PRMSTRUNK   = $(PRMSDIR)/trunk
 PRMSBRANCH  = $(PRMSDIR)/branch
 BINDIR      = $(MOWSDIR)/bin
 PRMSBASE    = $(LIBDIR)/libprmsbase.a
-MMFLIB      = $(MOWSDIR)/lib/libmmf.a
+MMFLIB      = $(MOWSDIR)/mmf/lib/libmmf.a
 
 #########################################################
 # Configure tags for each system
 ##########################################################
-ARC		= LINUX
+ifndef ARC
+ARC		= Unknown
+endif
 
 #OPTLEVEL	= -g
 OPTLEVEL	= -O -Bstatic
@@ -34,7 +36,10 @@ FC		= gfortran
 # -D_UF defines UNIX naming conventions for mixed language compilation.
 ##########################################################
 CFLAGS		= $(OPTLEVEL) -D$(ARC) -D_UF
+# user may define which C compiler as environment variable
+ifndef CC
 CC		= gcc
+endif
 
 ##########################################################
 # Define the libraries
@@ -53,4 +58,3 @@ MAKE		= make
 LN		= ln -s
 CD		= cd
 CP		= cp
-

@@ -2,8 +2,8 @@
 # $Id: Makefile 5629 2013-04-24 21:50:20Z rsregan $
 
 include ../makelist
-TARGET 	= $(BINDIR)/prmsIV
-LIBS	= $(PRMSBASE) $(MMFLIB)
+TARGET 	= ../$(BINDIR)/prmsIV
+LIBS	= ../$(PRMSBASE) ../$(MMFLIB)
 
 ####################################################
 # Rules for targets
@@ -15,7 +15,7 @@ $(TARGET): call_modules.o basin.o obs.o climateflow.o intcp.o snowcomp.o srunoff
 	$(CC) $(LDFLAGS) -o $(TARGET) call_modules.o basin.o obs.o climateflow.o intcp.o snowcomp.o srunoff.o gwflow.o $(LIBS) $(FLIBS)
 
 $(MMFLIB):
-	$(CD) $(MMFDIR);make
+	$(CD) ../$(MMFDIR);make
 
 #
 # Define all object files which make up the library
@@ -69,8 +69,8 @@ lib: $(LIBS)
 
 $(PRMSBASE): call_modules.o $(LIBOBJS)
 	$(RM) $(PRMSBASE)
-	$(AR) $(PRMSBASE) $(LIBOBJS)
-	$(RANLIB) $(PRMSBASE)
+	$(AR) ../$(PRMSBASE) $(LIBOBJS)
+	$(RANLIB) ../$(PRMSBASE)
 
 clean:
 	$(RM) $(PRMSBASE)
